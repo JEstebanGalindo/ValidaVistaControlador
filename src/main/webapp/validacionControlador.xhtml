@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>CONTROLADOR</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Controlador</h1>
+        <br></br>
+            <h:outputText value="Palabra:"/>
+            <h:inputText id="vacio" value="#{validacionControlador.mensajeVacio}" validator="#{validacionControlador.validarVacio}"/>
+            <h:messages for="vacio" style="color: red"/>
+            <br></br>
+            <br></br>
+            <h:outputText value="Tamaño: "/>
+            <h:inputText id="tamaño" label="Tamaño" value="#{validacionControlador.mensajeTamaño}" validator="#{validacionControlador.validarTamano}"/>
+            <h:messages for="tamaño" style="color: red"/>
+            <br></br>
+            <br></br>
+            <h:outputText value="Correo: "/>
+            <h:inputText id="email" label="Email" value="#{validacionControlador.mensajeCorreo}" validator="#{validacionControlador.validarEmail}"/>
+            <h:messages for="email" style="color: red"/>
+            <br></br>
+            <br></br>
+            <h:outputText value="Valores Rango: "/>
+            <h:inputText id="valores" label="Valores" value="#{validacionControlador.mensajeValores}" validator="#{validacionControlador.validarValores}" onkeypress="if((event.which &lt; 48 &amp;&amp; event.which != 44 &amp;&amp; event.which != 46) || event.which &gt; 57) return false;"/>
+            <h:messages for="valores" style="color: red"/>
+            <br></br>
+            <br></br>
+            <h:outputText value="Fecha (dd/mm/yy): "/>
+            <h:inputText id="fecha" label="Fecha" value="#{validacionControlador.mensajeFechas}" validator="#{validacionControlador.validarFecha}"/>
+            <h:messages for="fecha" style="color: red"/>
+            <br></br>
+            <br></br>
+            <h:outputText  value="Moneda: "/>
+            <h:inputText id="moneda" label="Moneda" value="#{validacionControlador.mensajeMoneda}" validator="#{validacionControlador.validarMoneda}"/>
+            <h:messages for="moneda" style="color: red"/>
+            <br></br>
+            <br></br>
+            <h:commandButton value ="VALIDAR" action="validacionVista">
+            </h:commandButton>
+            <br></br>
+            <h:outputText value="#{validacionControlador.mensajeError}" style=" color: red; font-size:large; "/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>VISTA</title>
+    </h:head>
+    <h:body>
+         <h:form>
+            <h1>Vista</h1>
+            <br></br>
+            <h:outputText value="Palabra:"/>
+            <h:inputText id="palabra" required="true" label="Palabra "/>
+            <h:message for="palabra" style = "color:red" ></h:message>
+            <br></br><br></br>
+            <h:outputText value="Tamaño: "/>
+            <h:inputText id="tamaño" required="false" label="Tamaño ">
+                <f:validateLength minimum="3" maximum="5" />
+            </h:inputText> 
+            <h:message for="tamaño" style = "color:red"></h:message>
+            <br></br><br></br>
+            <h:outputText value="Correo: "/>
+            <h:inputText id="email" required="true" label="Email " >
+                <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+            </h:inputText>   
+            <h:message for="email" style = "color:red"></h:message>
+            <br></br><br></br>
+            <h:outputText value="Valores Rango: "/>
+            <h:inputText id="valores" required="true" label="Valores " onkeypress="if((event.which &lt; 48 &amp;&amp; event.which != 44 &amp;&amp; event.which != 46) || event.which &gt; 57) return false;">
+                <f:validateLongRange minimum="-5" maximum="5"></f:validateLongRange>
+            </h:inputText> 
+            <h:message for="valores" style = "color:red"></h:message>
+            <br></br><br></br>
+            <h:outputText value="Fecha(dd/mm/yy): "/>
+            <h:inputText  id="fecha" required="true" label="Fecha ">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText>
+            <h:message for="fecha" style = "color:red"></h:message>
+            <br></br><br></br>
+            <h:outputText  value="Moneda: "/>
+            <h:inputText  id="moneda" required="true" label="Moneda ">
+                <f:convertNumber currencySymbol="$" groupingUsed="true" maxFractionDigits="3" type="currency" locale="es_CO" />
+            </h:inputText>
+            <h:message for="moneda" style = "color:red"></h:message>
+            <br></br><br></br>
+            <h:commandButton value ="VALIDAR" action="validacionControlador">
+            </h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+
+
+
