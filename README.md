@@ -1,0 +1,2 @@
+# ValidaVistaControlador
+validaciones vista controlador
